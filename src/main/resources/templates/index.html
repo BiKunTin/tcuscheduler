@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - SuperFrog Scheduler</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="/css/fcicons.css">
+    <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="/css/Features-Boxed.css">
+    <link rel="stylesheet" href="/css/fullcalendar/main.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body id="page-top" style="color: var(--purple);">
+<div id="wrapper" style="color: var(--purple);">
+    <nav class="navbar navbar-dark align-items-start visible sidebar sidebar-dark accordion bg-gradient-primary p-0"
+         id="nav-bar" style="background: var(--purple);">
+        <div class="container-fluid d-flex flex-column p-0"><a
+                class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+            <div class="sidebar-brand-icon"><i class="fas fa-frog"></i></div>
+        </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="navbar-nav text-light" id="accordionSidebar">
+                <li class="nav-item"><a class="nav-link" th:href="@{/}"><i class="fa fa-home"></i><span>Home</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{/calendar}"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/spiritdirectortable}"><i class="fas fa-table"></i><span>Table</span></a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/dashboard}"><i class="far fa-user-circle"></i><span>Dashboard</span></a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{tcuevent}"><i class="fas fa-user-circle"></i><span>Tcu Event</span></a></li>
+                <li class="nav-item"></li>
+            </ul>
+            <div class="text-center d-none d-md-inline">
+                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+            </div>
+        </div>
+    </nav>
+    <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                <div class="container-fluid">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i
+                            class="fas fa-bars"></i></button>
+                    <ul class="navbar-nav flex-nowrap ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                                                       aria-expanded="false" data-toggle="dropdown"
+                                                                       href="#"><span
+                                    class="d-none d-lg-inline mr-2 text-gray-600 small">Riley Durbin</span><img
+                                    class="border rounded-circle img-profile"
+                                    src="/img/avatars/Riley-headshot.jpg"></a>
+                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+                                    <a class="dropdown-item" href="profile.html">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <form method="post" th:action="@{/logout}">
+                                    <a class="dropdown-item" href="/login">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <section class="features-boxed" style="background: var(--fc-list-event-hover-bg-color);">
+                <div class="container" style="color: var(--purple);background: var(--fc-list-event-hover-bg-color);">
+                    <div class="intro">
+                        <h2 class="text-center">SuperFrog Scheduler</h2>
+                    </div>
+                    <div class="row justify-content-center features">
+                        <div class="col-sm-6 col-md-5 col-lg-4 item">
+                            <div class="box" style="height: 470px;"><i class="fa fa-money icon"
+                                                                       style="color: var(--purple);border-color: var(--purple);"></i>
+                                <h3 class="name" style="border-color: var(--purple);">Pricing</h3>
+                                <p class="description">ALL appearances are paid. Prices are based on a 1 hour
+                                    appearance; additional fees may apply if more than one hour. SuperFrog, Showgirls,
+                                    and Cheerleaders are individually priced. Payment must be made after receiving an
+                                    appearance request approval email, and a minimum of 24 hours prior to the event or
+                                    it will be canceled. <br></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-5 col-lg-4 item">
+                            <div class="box" style="height: 470px;"><i class="fa fa-map-marker icon"
+                                                                       style="color: var(--purple);"></i>
+                                <h3 class="name" style="border-color: var(--purple);">Range</h3>
+                                <p class="description">We only service requests that are within 100 mile radius from
+                                    Amon G. Carter Stadium.<br></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-5 col-lg-4 item">
+                            <div class="box" style="height: 470px;"><i class="fa fa-calendar icon"
+                                                                       style="color: var(--purple);"></i>
+                                <h3 class="name" style="border-color: var(--purple);">Request</h3>
+                                <p class="description">Request TCU Spirit from a calendar of available dates. Requests
+                                    must be submitted at least 14 days prior to event date to be considered. Submission
+                                    of a request does not guarantee the event will be accepted. TCU Spirit has until 5
+                                    days prior the date of the event to accept or decline a request.<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="index"></div>
+                </div>
+            </section>
+        </div>
+        <footer class="bg-white sticky-footer">
+            <div class="container my-auto">
+                <div class="text-center my-auto copyright"><span>Copyright © Brand 2021</span></div>
+            </div>
+        </footer>
+    </div>
+    <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/Bootstrap-DateTime-Picker-1.js"></script>
+<script src="/js/Bootstrap-DateTime-Picker-2.js"></script>
+<script src="/js/Bootstrap-DateTime-Picker.js"></script>
+<script src="/js/fullcalendar/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+<script src="/js/theme.js"></script>
+</body>
+
+</html>
